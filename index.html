@@ -1,0 +1,1004 @@
+﻿<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Итоги 2025 — Услуги Бот и Бот правил</title>
+  <meta name="description" content="Итоги 2025: Услуги Бот и Бот правил (Стража Зелёных Холмов). Красиво, крупно, по делу." />
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg0:#070A12;
+      --bg1:#0B1020;
+      --glass: rgba(255,255,255,.06);
+      --stroke: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.66);
+      --muted2: rgba(255,255,255,.48);
+      --shadow: 0 18px 70px rgba(0,0,0,.55);
+      --shadow2: 0 12px 36px rgba(0,0,0,.45);
+      --r: 30px;
+      --r2: 20px;
+      --max: 1120px;
+
+      --a:#7C5CFF;
+      --b:#00E0FF;
+      --c:#2DFF8E;
+      --d:#FFCC00;
+      --e:#FF4D8D;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color: var(--text);
+      background:
+        radial-gradient(1600px 1200px at 50% 8%, rgba(124,92,255,.16), transparent 60%),
+        linear-gradient(180deg, #060910 0%, #0b1120 52%, #0c1526 100%);
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      overflow-x:hidden;
+      scroll-behavior:smooth;
+    }
+
+    .wrap{max-width:var(--max); margin:0 auto; padding: 18px 16px 90px;}
+
+    /* top */
+    .topbar{
+      display:grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items:center;
+      gap:12px;
+      margin-bottom: 12px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px; min-width:0;
+    }
+    .logo{
+      width:46px; height:46px; border-radius:16px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.06);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+    .logo img{width:100%; height:100%; display:block}
+    .brand .name{
+      margin:0;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing:-.01em;
+    }
+    .brand .year{
+      margin:2px 0 0;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:600;
+    }
+
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.05);
+      color: rgba(255,255,255,.78);
+      font-size: 12px;
+      white-space:nowrap;
+      box-shadow: 0 10px 26px rgba(0,0,0,.22);
+      font-weight:600;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--a), var(--b), var(--c));
+      box-shadow: 0 0 0 4px rgba(124,92,255,.12);
+    }
+    .logoPair{
+      display:flex; align-items:center; gap:10px;
+      justify-self:flex-start;
+    }
+    .logo.small{
+      width:40px; height:40px; border-radius:14px;
+    }
+    .topbar.compact{
+      margin-bottom: 10px;
+    }
+    .yearPill{
+      border-color: rgba(255,255,255,.14);
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.90);
+      justify-self:flex-end;
+    }
+    .topBrand .name{
+      font-size: 20px;
+      letter-spacing:-.02em;
+      text-align:center;
+    }
+    .topBrand .year{
+      font-size: 14px;
+      color: rgba(255,255,255,.78);
+      font-weight:600;
+      text-align:center;
+    }
+    .topBrand{justify-self:center;}
+    .topbar.heroBar{
+      grid-template-columns: auto 1fr;
+      gap: 10px;
+    }
+    .topbar.heroBar .pill{justify-self:end;}
+    @media (max-width: 640px){
+      .topbar.heroBar{
+        grid-template-columns: 1fr;
+        gap:6px;
+        align-items:flex-start;
+      }
+      .topbar.heroBar .pill{justify-self:flex-start;}
+    }
+
+    /* switcher */
+    .switcher{
+      position: sticky;
+      top: 10px;
+      z-index: 50;
+      margin: 10px 0 14px;
+      display:flex;
+      justify-content:center;
+      pointer-events:none; /* only inner buttons clickable */
+    }
+    .switcher .inner{
+      pointer-events:auto;
+      display:flex;
+      gap:8px;
+      padding: 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(10,14,28,.55);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+    }
+    .tab{
+      text-decoration:none;
+      color: rgba(255,255,255,.80);
+      font-weight:600;
+      font-size: 13px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+    }
+    .tab:hover{ background: rgba(255,255,255,.06); }
+    .tab .miniDot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--c), var(--b));
+      box-shadow: 0 0 0 4px rgba(45,255,142,.08);
+    }
+
+    /* sections base */
+    section{
+      border-radius: var(--r);
+      border: 1px solid var(--stroke);
+      background: rgba(255,255,255,.04);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      margin-top: 14px;
+      position:relative;
+      overflow:hidden;
+    }
+    section::after{
+      content:"";
+      position:absolute;
+      inset: -140px -180px auto auto;
+      width: 460px; height: 460px;
+      background:
+              radial-gradient(circle at 30% 30%, rgba(255,255,255,.14), transparent 62%),
+              linear-gradient(135deg, rgba(124,92,255,.18), rgba(0,224,255,.12), rgba(45,255,142,.10));
+      transform: rotate(18deg);
+      opacity:.55;
+      pointer-events:none;
+    }
+
+    /* HERO */
+    .hero{ padding: 28px 20px; }
+    .hero h1{
+      margin: 0 0 10px;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: clamp(34px, 5vw, 64px);
+      line-height: 1.02;
+      letter-spacing:-.04em;
+      position:relative;
+      z-index:1;
+      font-weight:700;
+    }
+    .hero p{
+      margin:0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.55;
+      max-width: 76ch;
+      position:relative;
+      z-index:1;
+      font-weight:500;
+    }
+
+    .tags{
+      margin-top: 16px;
+      display:flex; flex-wrap:wrap; gap:10px;
+      position:relative;
+      z-index:1;
+    }
+    .tag{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      font-size: 13px;
+      color: rgba(255,255,255,.84);
+      white-space:nowrap;
+      font-weight:600;
+    }
+    .spark{
+      width:10px; height:10px; border-radius:50%;
+      background: linear-gradient(135deg, var(--c), var(--b));
+      box-shadow: 0 0 0 4px rgba(45,255,142,.10);
+    }
+    .sectionMeta{
+      display:flex; align-items:center; justify-content:space-between;
+      gap: 12px; flex-wrap:wrap;
+      margin-bottom: 12px;
+    }
+    .sectionMeta .brand{margin-bottom:0;}
+    .sectionMeta .pill{margin-left:auto;}
+
+    /* Big wish banners */
+    .wish{
+      margin-top: 16px;
+      border-radius: 26px;
+      border: 1px solid rgba(255,255,255,.12);
+      background:
+              radial-gradient(700px 220px at 10% 20%, rgba(124,92,255,.18), transparent 60%),
+              radial-gradient(700px 220px at 90% 10%, rgba(0,224,255,.14), transparent 60%),
+              rgba(255,255,255,.05);
+      padding: 18px;
+      position:relative;
+      z-index:1;
+      box-shadow: 0 12px 32px rgba(0,0,0,.25);
+    }
+    .wish .t{
+      margin:0;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: clamp(22px, 3vw, 38px);
+      font-weight: 700;
+      letter-spacing:-.02em;
+      line-height:1.1;
+    }
+    .wish .s{
+      margin:10px 0 0;
+      color: rgba(255,255,255,.82);
+      font-size: 15px;
+      line-height:1.55;
+      font-weight:500;
+      max-width: 86ch;
+    }
+
+    /* titles */
+    .sectionTitle{
+      margin: 0 0 8px;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing:-.02em;
+      position:relative;
+      z-index:1;
+    }
+    .sectionText{
+      margin:0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height:1.6;
+      position:relative;
+      z-index:1;
+      max-width: 86ch;
+      font-weight:500;
+    }
+
+    /* Cards */
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 12px;
+      position:relative;
+      z-index:1;
+      margin-top: 14px;
+    }
+    @media (max-width: 900px){ .grid{grid-template-columns: repeat(2, minmax(0,1fr));} }
+    @media (max-width: 560px){ .grid{grid-template-columns: 1fr;} }
+
+    .card{
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      overflow:hidden;
+      position:relative;
+    }
+    @media (max-width: 640px){
+      .card{padding:14px;}
+    }
+    .label{
+      color: var(--muted2);
+      font-size: 12px;
+      letter-spacing:.10em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+      font-weight:700;
+    }
+    .value{
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: 44px;
+      font-weight: 700;
+      letter-spacing:-.04em;
+      margin:0 0 6px;
+      line-height:1;
+    }
+    .note{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+      font-weight:500;
+    }
+
+    /* Meters */
+    .meterbox{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      position:relative;
+      z-index:1;
+      margin-top: 14px;
+    }
+    @media (max-width: 900px){ .meterbox{grid-template-columns:1fr;} }
+    @media (max-width: 640px){ .meterbox{gap:10px; margin-top:10px;} }
+
+    .meterCard{
+      border-radius: var(--r2);
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      padding: 14px 16px;
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+    }
+    .meterTop{
+      display:flex; align-items:center; justify-content:space-between; gap:12px;
+      margin-bottom: 6px;
+    }
+    .meterTop .t{
+      margin:0;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: 16px;
+      color: rgba(255,255,255,.90);
+      font-weight: 700;
+      letter-spacing:-.01em;
+    }
+    .meterTop .p{
+      margin:0;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing:-.04em;
+      white-space:nowrap;
+    }
+    .meterSub{
+      margin:0;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight:500;
+    }
+    .meter{
+      margin-top: 12px;
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    .meter > span{
+      display:block; height:100%;
+      width: var(--w);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124,92,255,.85), rgba(0,224,255,.80), rgba(45,255,142,.70));
+    }
+    .chips{
+      margin-top: 10px;
+      display:flex; flex-wrap:wrap; gap: 8px;
+    }
+    .chip{
+      display:inline-flex; align-items:center; gap:8px;
+      padding: 8px 11px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      font-size: 12px;
+      color: rgba(255,255,255,.80);
+      white-space:nowrap;
+      font-weight:600;
+    }
+    .appealsCard .meterTop .p{
+      font-size: 52px;
+      line-height:1;
+    }
+    .appealsCard{padding: 12px 14px;}
+    .appealsCard .label{margin-bottom: 6px;}
+    .appealsCard .appealsValue{
+      margin:0 0 6px;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: 40px;
+      font-weight:700;
+      letter-spacing:-.03em;
+      line-height:1;
+    }
+    .appealsCard .note{margin: 0 0 8px;}
+    .appealsCard .chips{margin-top: 6px;}
+
+    /* Bars */
+    .bars{
+      display:flex;
+      flex-direction:column;
+      gap: 10px;
+      position:relative;
+      z-index:1;
+      margin-top: 12px;
+    }
+    .bar{
+      display:grid;
+      grid-template-columns: 1.6fr 2.2fr .5fr;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 18px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+    }
+    @media (max-width: 560px){ .bar{grid-template-columns: 1fr;} }
+    .bar .name{
+      font-size: 14px;
+      color: rgba(255,255,255,.90);
+      line-height:1.2;
+      font-weight:600;
+    }
+    .track{
+      height: 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.05);
+      overflow:hidden;
+    }
+    .fill{
+      height:100%;
+      width: var(--w);
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(124,92,255,.78), rgba(0,224,255,.66), rgba(45,255,142,.54));
+    }
+    .bar .val{
+      text-align:right;
+      font-size: 12px;
+      color: rgba(255,255,255,.78);
+      white-space:nowrap;
+      font-weight:700;
+    }
+
+    /* mini chart (SVG wrapper) */
+    .chartWrap{
+      margin-top: 14px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+      padding: 14px;
+      position:relative;
+      z-index:1;
+      box-shadow: 0 10px 24px rgba(0,0,0,.20);
+    }
+    .chartHead{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom: 10px;
+    }
+    .chartTitle{
+      margin:0;
+      font-family:"Space Grotesk", ui-sans-serif, system-ui;
+      font-weight:700;
+      font-size: 16px;
+      letter-spacing:-.01em;
+    }
+    .chartNote{
+      margin:0;
+      font-size: 12px;
+      color: var(--muted);
+      font-weight:500;
+      white-space:nowrap;
+    }
+    .chartSvg{ width:100%; height:220px; display:block; }
+    @media (max-width: 640px){
+      .chartSvg{height:240px;}
+    }
+    @media (max-width: 640px){
+      .wrap{padding: 14px 12px 80px;}
+      .topbar{grid-template-columns: auto 1fr auto;}
+      .logo.small{width:36px; height:36px;}
+      .brand .name{font-size:15px;}
+      .brand .year{font-size:12px;}
+      .pill, .chip{padding:7px 10px; font-size:11px;}
+      .switcher .inner{padding:6px; gap:6px;}
+      .tab{padding:7px 10px; font-size:12px;}
+      .sectionMeta{flex-direction:column; align-items:flex-start;}
+      .sectionMeta .pill{margin-left:0;}
+      .hero h1{font-size: clamp(28px, 8vw, 42px);}
+      .hero p{font-size:15px;}
+      .chartWrap{padding: 12px;}
+      .chartHead{flex-direction:column; align-items:flex-start; gap:6px;}
+      .chartSvg{height:220px;}
+      .tags{gap:8px;}
+      .tag{font-size:12px; padding:8px 10px;}
+    }
+
+    /* Big ending */
+    .endcap{
+      padding: 34px 12px 18px;
+      text-align:center;
+      background: none;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      position:static;
+    }
+    .endcap::after{display:none;}
+    .endcap h2{
+      margin:0 0 10px;
+      font-family: "Space Grotesk", ui-sans-serif, system-ui;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight:700;
+      letter-spacing:-.03em;
+      position:relative;
+      z-index:1;
+    }
+    .endcap p{
+      margin:0 auto;
+      max-width: 76ch;
+      color: rgba(255,255,255,.84);
+      font-size: 16px;
+      line-height:1.65;
+      font-weight:500;
+      position:relative;
+      z-index:1;
+    }
+
+    /* subtle divider title */
+    .chapter{
+      margin-top: 18px;
+      scroll-margin-top: 120px;
+      padding: 0 4px;
+      color: rgba(255,255,255,.78);
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .chapter:before, .chapter:after{
+      content:"";
+      height:1px;
+      flex:1;
+      background: rgba(255,255,255,.10);
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrap">
+
+  <div class="topbar compact">
+    <div class="logoPair">
+      <div class="logo small">
+        <img src="logo.png" alt="Итоги 2025">
+      </div>
+      <div class="logo small">
+        <img src="logo2.png" alt="Бот правил">
+      </div>
+    </div>
+    <div class="brand topBrand">
+      <div>
+        <div class="name">Итоги 2025</div>
+        <div class="year">два бота, один год</div>
+      </div>
+    </div>
+    <div class="pill yearPill">2025</div>
+  </div>
+
+
+  <div class="switcher">
+    <div class="inner">
+      <a class="tab" href="#services"><span class="miniDot"></span> Услуги Бот</a>
+      <a class="tab" href="#rules"><span class="miniDot"></span> Бот правил</a>
+    </div>
+  </div>
+
+
+
+
+  <div class="chapter" id="services">Услуги Бот</div>
+
+  <section class="hero">
+    <div class="sectionMeta">
+      <div class="brand">
+        <div class="logo">
+
+          <img src="logo.png" alt="Итоги 2025">
+        </div>
+        <div>
+          <div class="name">Бот Услуг</div>
+          <div class="year">Каталог услуг и организаций ЗХ</div>
+        </div>
+      </div>
+
+
+      <div class="pill"><span class="dot"></span> Доля организаций 6,9%</div>
+    </div>
+
+    <h1>2025 в Боте Услуг ✨</h1>
+    <p>Собрали каталог, разложили услуги по категориям и сделали публикации аккуратными.</p>
+
+    <div class="tags">
+      <span class="tag"><span class="spark"></span> 495 пользователей</span>
+      <span class="tag"><span class="spark"></span> 201 услуга</span>
+      <span class="tag"><span class="spark"></span> 24 категории</span>
+      <span class="tag"><span class="spark"></span> 5,0 средняя оценка</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionTitle">Каталог 📚</div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Пользователи</div>
+        <div class="value">495</div>
+        <p class="note">С нами в 2025</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Услуги в каталоге</div>
+        <div class="value">201</div>
+        <p class="note">Можно выбирать и сравнивать</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Категории услуг</div>
+        <div class="value">24</div>
+        <p class="note">Чтобы находить быстро</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionTitle">Публикации 👍</div>
+
+    <div class="meterbox">
+      <div class="meterCard">
+        <div class="meterTop">
+          <p class="t">Предложения услуг</p>
+          <p class="p">82,6%</p>
+        </div>
+        <p class="meterSub">57 опубликовано из 69</p>
+        <div class="meter" style="--w:82.6%"><span></span></div>
+        <div class="chips">
+          <span class="chip"><span class="spark"></span> 69 создано</span>
+          <span class="chip"><span class="spark"></span> 57 опубликовано</span>
+        </div>
+      </div>
+
+      <div class="meterCard">
+        <div class="meterTop">
+          <p class="t">Отзывы</p>
+          <p class="p">100%</p>
+        </div>
+        <p class="meterSub">13 опубликовано из 13</p>
+        <div class="meter" style="--w:100%"><span></span></div>
+        <div class="chips">
+          <span class="chip"><span class="spark"></span> 5,0 средняя оценка</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionTitle">Где чаще добавляли предложения 🌲</div>
+    <p class="sectionText">
+      Это категории, в которых чаще всего добавляли предложения услуг.
+      Если категория не выбрана, предложение всё равно сохраняется и попадает в общий список.
+    </p>
+
+
+    <div class="bars">
+      <div class="bar">
+        <div class="name">Без выбранной категории 🧩</div>
+        <div class="track"><div class="fill" style="--w:100%"></div></div>
+        <div class="val">15</div>
+      </div>
+      <div class="bar">
+        <div class="name">СТРОИТЕЛЬСТВО, РЕМОНТ 🧱</div>
+        <div class="track"><div class="fill" style="--w:93.3%"></div></div>
+        <div class="val">14</div>
+      </div>
+      <div class="bar">
+        <div class="name">САД ОГОРОД 🌳</div>
+        <div class="track"><div class="fill" style="--w:66.7%"></div></div>
+        <div class="val">10</div>
+      </div>
+      <div class="bar">
+        <div class="name">ПРОДУКТЫ, ЕДА 🍎</div>
+        <div class="track"><div class="fill" style="--w:46.7%"></div></div>
+        <div class="val">7</div>
+      </div>
+      <div class="bar">
+        <div class="name">ГАЗ, ЭЛЕКТРИЧЕСТВО, ВОДА, ОТОПЛЕНИЕ 🧯</div>
+        <div class="track"><div class="fill" style="--w:26.7%"></div></div>
+        <div class="val">4</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionTitle">Самые наполненные категории каталога 🎁</div>
+    <p class="sectionText">Здесь видно, где уже много услуг внутри каталога.</p>
+
+
+    <div class="bars">
+      <div class="bar">
+        <div class="name">СТРОИТЕЛЬСТВО, РЕМОНТ 🧱</div>
+        <div class="track"><div class="fill" style="--w:100%"></div></div>
+        <div class="val">33</div>
+      </div>
+      <div class="bar">
+        <div class="name">САД ОГОРОД 🌳</div>
+        <div class="track"><div class="fill" style="--w:57.6%"></div></div>
+        <div class="val">19</div>
+      </div>
+      <div class="bar">
+        <div class="name">ГАЗ, ЭЛЕКТРИЧЕСТВО, ВОДА, ОТОПЛЕНИЕ 🧯</div>
+        <div class="track"><div class="fill" style="--w:48.5%"></div></div>
+        <div class="val">16</div>
+      </div>
+      <div class="bar">
+        <div class="name">ПРОДУКТЫ, ЕДА 🍎</div>
+        <div class="track"><div class="fill" style="--w:42.4%"></div></div>
+        <div class="val">14</div>
+      </div>
+      <div class="bar">
+        <div class="name">МАНИКЮР, ПЕДИКЮР, РЕСНИЦЫ, БРОВИ ✨</div>
+        <div class="track"><div class="fill" style="--w:42.4%"></div></div>
+        <div class="val">14</div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <div class="chapter" id="rules">Бот правил</div>
+
+  <section class="hero">
+    <div class="topbar heroBar" style="margin-bottom:0">
+      <div class="brand">
+        <div class="logo">
+          <img src="logo2.png" alt="Бот правил">
+        </div>
+        <div>
+          <div class="name">Бот правил</div>
+          <div class="year">Страж группы Зелёных Холмов</div>
+        </div>
+      </div>
+      <div class="pill"><span class="dot"></span>Модерация группы</div>
+    </div>
+
+    <h1 style="margin-top:14px">Группа под защитой 🛡️</h1>
+    <p>
+      Этот бот следил за порядком в группе Зелёных Холмов.
+      Он фиксировал сообщения, выдавал предупреждения, блокировал нарушителей и принимал апелляции.
+    </p>
+
+    <div class="tags">
+      <span class="tag"><span class="spark"></span> 35 366 сообщений</span>
+      <span class="tag"><span class="spark"></span> 1 733 пользователя</span>
+      <span class="tag"><span class="spark"></span> 13 тем</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionTitle">Масштаб 📣</div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Сообщения</div>
+        <div class="value">35 366</div>
+        <p class="note">Опубликовано с 17 марта 2025</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Участники группы</div>
+        <div class="value">1 733</div>
+        <p class="note">Уникальные пользователи</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Темы</div>
+        <div class="value">13</div>
+        <p class="note">Под наблюдением</p>
+      </div>
+    </div>
+
+
+    <div class="chartWrap">
+      <div class="chartHead">
+        <p class="chartTitle">Активность по месяцам 📈</p>
+        <p class="chartNote">2025-03 → 2025-12</p>
+      </div>
+
+
+
+
+      <svg class="chartSvg" viewBox="0 0 1000 220" preserveAspectRatio="xMidYMid meet" aria-label="Активность по месяцам">
+        <defs>
+          <linearGradient id="gLine" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="rgba(124,92,255,.9)"/>
+            <stop offset="0.5" stop-color="rgba(0,224,255,.85)"/>
+            <stop offset="1" stop-color="rgba(45,255,142,.8)"/>
+          </linearGradient>
+          <linearGradient id="gFill" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="rgba(0,224,255,.18)"/>
+            <stop offset="1" stop-color="rgba(0,224,255,0)"/>
+          </linearGradient>
+        </defs>
+
+        <g opacity="0.2" stroke="rgba(255,255,255,.22)" stroke-width="1">
+          <line x1="0" y1="40" x2="1000" y2="40"/>
+          <line x1="0" y1="90" x2="1000" y2="90"/>
+          <line x1="0" y1="140" x2="1000" y2="140"/>
+          <line x1="0" y1="190" x2="1000" y2="190"/>
+        </g>
+
+        <path fill="url(#gFill)" d="
+          M 0 190
+          L 0 190
+          L 111 95
+          L 222 76
+          L 333 49
+          L 444 34
+          L 556 39
+          L 667 88
+          L 778 124
+          L 889 148
+          L 1000 135
+          L 1000 190
+          Z
+        "/>
+
+        <path d="
+          M 0 190
+          L 111 95
+          L 222 76
+          L 333 49
+          L 444 34
+          L 556 39
+          L 667 88
+          L 778 124
+          L 889 148
+          L 1000 135
+        " fill="none" stroke="url(#gLine)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+
+        <g fill="rgba(255,255,255,.92)">
+          <circle cx="0" cy="190" r="4"/>
+          <circle cx="111" cy="95" r="4"/>
+          <circle cx="222" cy="76" r="4"/>
+          <circle cx="333" cy="49" r="4"/>
+          <circle cx="444" cy="34" r="4"/>
+          <circle cx="556" cy="39" r="4"/>
+          <circle cx="667" cy="88" r="4"/>
+          <circle cx="778" cy="124" r="4"/>
+          <circle cx="889" cy="148" r="4"/>
+          <circle cx="1000" cy="135" r="4"/>
+        </g>
+      </svg>
+
+      <p class="sectionText" style="margin-top:10px">
+        Пик активности пришёлся на лето. В июле было 4 921 сообщения.
+      </p>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionTitle">Качество и порядок 🛡️</div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Предупреждения</div>
+        <div class="value">1 524</div>
+        <p class="note">Выдано за год</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Пользователи с предупреждениями</div>
+        <div class="value">550</div>
+        <p class="note">В среднем 2,77 предупреждения на человека</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Баны</div>
+        <div class="value">115</div>
+        <p class="note">51 человек попадал в бан</p>
+      </div>
+    </div>
+
+    <div class="meterbox">
+      <div class="meterCard appealsCard">
+        <div class="label">АПЕЛЛЯЦИИ</div>
+        <p class="appealsValue">9</p>
+        <p class="note">8 приняты, 1 отклонена</p>
+        <div class="chips">
+          <span class="chip"><span class="spark"></span> среднее время ответа 30 минут</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sectionTitle">Приглашения 🤝</div>
+
+    <div class="grid">
+      <div class="card">
+        <div class="label">Присоединились по приглашениям</div>
+        <div class="value">415</div>
+        <p class="note">Новые участники</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Кто приглашал</div>
+        <div class="value">268</div>
+        <p class="note">Участники, которые делились ссылкой</p>
+      </div>
+
+      <div class="card">
+        <div class="label">Всего вступлений</div>
+        <div class="value">427</div>
+        <p class="note">События вступлений</p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="endcap">
+    <h2>С наступающим 🎄✨</h2>
+    <p>
+      Спасибо, что пользовались ботом услуг и общались в группе.
+    </p>
+  </section>
+
+</div>
+
+</body>
+</html>
